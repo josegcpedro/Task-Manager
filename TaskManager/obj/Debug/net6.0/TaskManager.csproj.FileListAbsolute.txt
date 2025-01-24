@@ -1,0 +1,15 @@
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/bin/Debug/net6.0/TaskManager
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/bin/Debug/net6.0/TaskManager.deps.json
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/bin/Debug/net6.0/TaskManager.runtimeconfig.json
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/bin/Debug/net6.0/TaskManager.dll
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/bin/Debug/net6.0/ref/TaskManager.dll
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/bin/Debug/net6.0/TaskManager.pdb
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/obj/Debug/net6.0/TaskManager.csproj.AssemblyReference.cache
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/obj/Debug/net6.0/TaskManager.GeneratedMSBuildEditorConfig.editorconfig
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/obj/Debug/net6.0/TaskManager.AssemblyInfoInputs.cache
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/obj/Debug/net6.0/TaskManager.AssemblyInfo.cs
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/obj/Debug/net6.0/TaskManager.csproj.CoreCompileInputs.cache
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/obj/Debug/net6.0/TaskManager.dll
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/obj/Debug/net6.0/ref/TaskManager.dll
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/obj/Debug/net6.0/TaskManager.pdb
+/Users/josepedro/Desktop/cSharp/TaskManager/TaskManager/obj/Debug/net6.0/TaskManager.genruntimeconfig.cache
