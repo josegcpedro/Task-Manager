@@ -29,10 +29,10 @@ class Program
                 AddTask();
                 break;
             case "2":
-                //ModifyTask();
+                ModifyTask();
                 break;
             case "3":
-                //VerifyUnfinishedTasks();
+                VerifyUnfinishedTasks();
                 break;
             case "4":
                 VerifyFinishedTasks();
@@ -75,6 +75,23 @@ class Program
         else
         {
             foreach (var task in finishedTasks)
+            {
+                Console.WriteLine($"Nom: {task.Name}, Priorité: {task.Priority}");
+            }
+        }
+    }
+
+    static void VerifyUnfinishedTasks(){
+        var unfinishedTasks = tasks.Where(t => !t.Completed).ToList();
+
+        if (!unfinishedTasks.Any())
+        {
+            Console.WriteLine("Aucune tache trouvé!");
+            Menu();
+        }
+        else
+        {
+            foreach (var task in unfinishedTasks)
             {
                 Console.WriteLine($"Nom: {task.Name}, Priorité: {task.Priority}");
             }
