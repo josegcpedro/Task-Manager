@@ -77,11 +77,13 @@ class Program
             foreach (var task in finishedTasks)
             {
                 Console.WriteLine($"Nom: {task.Name}, Priorité: {task.Priority}");
+                Menu();
             }
         }
     }
 
-    static void VerifyUnfinishedTasks(){
+    static void VerifyUnfinishedTasks()
+    {
         var unfinishedTasks = tasks.Where(t => !t.Completed).ToList();
 
         if (!unfinishedTasks.Any())
@@ -94,11 +96,57 @@ class Program
             foreach (var task in unfinishedTasks)
             {
                 Console.WriteLine($"Nom: {task.Name}, Priorité: {task.Priority}");
+                Menu();
             }
         }
     }
 
+    static void ModifyTask()
+    {
+        Console.WriteLine("Quelle est le nom de la tache que vous souhaitez modifier?");
+        string desiredTaskToModify = Console.ReadLine();
 
+        Task taskToModify = tasks.Find(task => task.Name.Equals(desiredTaskToModify, StringComparison.OrdinalIgnoreCase));
+
+        if (desiredTaskToModify == null)
+        {
+            Console.WriteLine("Tache pas trouvé!");
+            Menu();
+        }
+        else
+        {
+            Console.WriteLine("Que voulez-vous modifier?");
+            Console.WriteLine("1. Le nom");
+            Console.WriteLine("2. La priorité");
+            Console.WriteLine("3. Mettre tache comme conclue.");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    Console.WriteLine("Quel est le nouveau nom?");
+                    string newName = Console.ReadLine();
+                    taskToModify.Name = newName;
+                    Console.WriteLine($"Nom changé! Nouveau nom : {taskToModify.Name}");
+                    Menu();
+                    break;
+                case "2":
+                    Console.WriteLine("Quel est la priorité");
+                    string input = Console.ReadLine();
+                    int.TryParse(input, out int newPriority);
+                    taskToModify.Priority = newPriority;
+                    Console.WriteLine($"Priorité changé! Nouvelle priorité : {taskToModify.Priority}");
+                    Menu();
+                    break;
+                case "3":
+                    Console.WriteLine("Task fini, bien joué!");
+                    taskToModify.Completed = true;
+                    Menu();
+                    break;
+            }
+        }
+    }
 }
 
 
