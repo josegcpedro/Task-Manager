@@ -19,7 +19,8 @@ class Program
         Console.WriteLine("3. Verifier les taches pas fini");
         Console.WriteLine("4. Verifier les taches fini");
         Console.WriteLine("5. Supprimer une tache");
-        Console.WriteLine("6. Quitter");
+        Console.WriteLine("6. Afficher par ordre de priorité");
+        Console.WriteLine("7. Quitter");
 
         string choice = Console.ReadLine();
 
@@ -41,6 +42,9 @@ class Program
                 DeleteTask();
                 break;
             case "6":
+                SortByPriority();
+                break;
+            case "7":
                 return;
                 break;
         }
@@ -167,6 +171,18 @@ class Program
             Menu();
         }
 
+    }
+
+    static void SortByPriority()
+    {
+
+        var sortedTasks = tasks.OrderByDescending(t => t.Priority).ToList();
+
+        Console.WriteLine("Tâches triées par priorité (croissante):");
+        foreach (var task in sortedTasks)
+        {
+            Console.WriteLine($"Nom: {task.Name}, Priorité: {task.Priority}");
+        }
     }
 }
 
