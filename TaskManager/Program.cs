@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 
 class Program
@@ -27,13 +29,13 @@ class Program
                 AddTask();
                 break;
             case "2":
-                //ModifyTask();
+                ModifyTask();
                 break;
             case "3":
-                //VerifyUnfinishedTasks();
+                VerifyUnfinishedTasks();
                 break;
             case "4":
-                //VerifyFinishedTasks();
+                VerifyFinishedTasks();
                 break;
             case "5":
                 //DeleteTask();
@@ -57,7 +59,46 @@ class Program
         tasks.Add(newTask);
 
         Console.WriteLine($"Nouvelle tâche ajoutée! {newTask.Name}");
+        Menu();
     }
+
+    static void VerifyFinishedTasks()
+    {
+        var finishedTasks = tasks.Where(t => t.Completed).ToList();
+
+
+        if (!finishedTasks.Any())
+        {
+            Console.WriteLine("Aucune tache fini trouvé!");
+            Menu();
+        }
+        else
+        {
+            foreach (var task in finishedTasks)
+            {
+                Console.WriteLine($"Nom: {task.Name}, Priorité: {task.Priority}");
+            }
+        }
+    }
+
+    static void VerifyUnfinishedTasks(){
+        var unfinishedTasks = tasks.Where(t => !t.Completed).ToList();
+
+        if (!unfinishedTasks.Any())
+        {
+            Console.WriteLine("Aucune tache trouvé!");
+            Menu();
+        }
+        else
+        {
+            foreach (var task in unfinishedTasks)
+            {
+                Console.WriteLine($"Nom: {task.Name}, Priorité: {task.Priority}");
+            }
+        }
+    }
+
+
 }
 
 
