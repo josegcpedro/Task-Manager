@@ -24,7 +24,7 @@ class Program
         switch (choice)
         {
             case "1":
-                //AddTask();
+                AddTask();
                 break;
             case "2":
                 //ModifyTask();
@@ -43,13 +43,34 @@ class Program
                 break;
         }
     }
+
+
+    static void AddTask()
+    {
+        Console.WriteLine("Quel est le nom de votre tache?");
+        string name = Console.ReadLine();
+        Console.WriteLine("De 1 a 10 qu'elle est la priorité de votre tache?");
+        string input = Console.ReadLine();
+        int.TryParse(input, out int priority);
+        bool completed = false;
+        Task newTask = new Task(name, priority, completed);
+        tasks.Add(newTask);
+
+        Console.WriteLine($"Nouvelle tâche ajoutée! {newTask.Name}");
+    }
 }
 
 
 class Task
 {
-    string? Name { get; set; }
-    int Priority { get; set; }
+    public string? Name { get; set; }
+    public int Priority { get; set; }
+    public bool Completed { get; set; }
 
-    bool Completed { get; set; }
+    public Task(string? name, int priority, bool completed)
+    {
+        Name = name;
+        Priority = priority;
+        Completed = completed;
+    }
 }
