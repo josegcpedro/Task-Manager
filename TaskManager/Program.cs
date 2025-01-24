@@ -38,7 +38,7 @@ class Program
                 VerifyFinishedTasks();
                 break;
             case "5":
-                //DeleteTask();
+                DeleteTask();
                 break;
             case "6":
                 return;
@@ -146,6 +146,24 @@ class Program
                     break;
             }
         }
+    }
+
+    static void DeleteTask()
+    {
+        Console.WriteLine("Quelle est la tâche que vous voulez supprimer?");
+        string desiredTaskToRemove = Console.ReadLine();
+
+        Task taskToDelete = tasks.Find(task => task.Name.Equals(desiredTaskToRemove, StringComparison.OrdinalIgnoreCase));
+
+        if(taskToDelete != null){
+            tasks.Remove(taskToDelete);
+            Console.WriteLine($"Tâche {taskToDelete.Name} suprimée!");
+            Menu();
+        }else{
+            Console.WriteLine("Task pas trouvé!");
+            Menu();
+        }
+
     }
 }
 
